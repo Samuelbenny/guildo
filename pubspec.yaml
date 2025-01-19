@@ -34,10 +34,33 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  refreshed: ^2.10.4 # Enhanced GetX for Flutter: Stability, Performance, Beginner-Friendly.
+  quickly: ^6.1.1
+  flutter_screenutil: ^5.9.3
+  extended_image: ^9.1.0
+  loading_indicator: ^3.1.1
+  icons_plus: ^5.0.0
+  flutter_rating_bar: ^4.0.1
+  dio: ^5.7.0
+  retrofit: ^4.4.2
+  logger: ^2.5.0
+  json_annotation: ^4.9.0
+  freezed_annotation: ^2.4.4
+  dartx: ^1.2.0
+  # more: ^4.5.0
+  grock: ^0.5.7
+  flex_color_scheme: ^8.1.0
+  dropdown_button2: ^3.0.0-beta.21
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  build_runner: ^2.4.14
+  retrofit_generator: ^9.1.7
+  json_serializable: ^6.9.3
+  freezed: ^2.5.8
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -73,17 +96,49 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  fonts:
+    - family: Sofia Pro
+      fonts:
+        - asset: assets/fonts/sofia-pro/SofiaProUltraLight.ttf
+          weight: 100
+        - asset: assets/fonts/sofia-pro/SofiaProUltraLight-Italic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/sofia-pro/SofiaProExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/sofia-pro/SofiaProExtraLight-Italic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/sofia-pro/SofiaProLight.ttf
+          weight: 300
+        - asset: assets/fonts/sofia-pro/SofiaProLight-Italic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/sofia-pro/SofiaProRegular.ttf
+          weight: 400
+        - asset: assets/fonts/sofia-pro/SofiaProRegular-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/sofia-pro/SofiaProMedium.ttf
+          weight: 500
+        - asset: assets/fonts/sofia-pro/SofiaProMedium-Italic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/sofia-pro/SofiaProSemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/sofia-pro/SofiaProSemiBold-Italic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/sofia-pro/SofiaProBold.ttf
+          weight: 700
+        - asset: assets/fonts/sofia-pro/SofiaProBold-Italic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/sofia-pro/SofiaProBlack.ttf
+          weight: 900
+        - asset: assets/fonts/sofia-pro/SofiaProBlack-Italic.ttf
+          weight: 900
+          style: italic
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
