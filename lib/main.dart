@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:guildo/config/routes_config.dart';
 import 'package:guildo/themes/themes.dart';
@@ -22,16 +23,16 @@ class GuildoApp extends StatelessWidget {
         theme: VolcanoTheme.lightTheme,
         darkTheme: VolcanoTheme.darkTheme,
         themeMode: ThemeMode.system,
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
         supportedLocales: const [
           Locale('fr', 'FR'),
           Locale('en', 'US'),
         ],
         locale: const Locale('fr', 'FR'),
         getPages: RouteConfig.rootNavigationPages,
-        // binds: [
-        //   Bind.put<PlayerController>(PlayerController()),
-        //   Bind.put<FloatingPlayerController>(FloatingPlayerController())
-        // ],
         builder: (context, xChild) {
           return xChild!;
         },

@@ -1,3 +1,4 @@
+import 'package:guildo/services/services.dart';
 import 'package:refreshed/refreshed.dart';
 
 part 'home_binding.dart';

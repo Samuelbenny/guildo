@@ -3,7 +3,8 @@ import 'package:refreshed/refreshed.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseConnector extends GetxService {
-  final SupabaseClient supabase = Supabase.instance.client;
+  late final SupabaseClient supabase;
+  static SupabaseConnector get to => Get.find<SupabaseConnector>();
 
   @override
   void onInit() async {
@@ -25,5 +26,7 @@ class SupabaseConnector extends GetxService {
           authFlowType: AuthFlowType.pkce,
       )
     );
+
+    supabase = Supabase.instance.client;
   }
 }
