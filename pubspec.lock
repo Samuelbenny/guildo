@@ -223,7 +223,7 @@ packages:
     source: hosted
     version: "1.2.0"
   dio:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dio
       sha256: "5598aa796bbf4699afd5c67c0f5f6e2ed542afc956884b9cd58c306966efc260"
@@ -238,14 +238,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
-  dropdown_button2:
-    dependency: "direct main"
-    description:
-      name: dropdown_button2
-      sha256: "50c4d8f73cb58c99a75581974d03457b690af646db19706af4aafd29ec3f6fe8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.0-beta.21"
   extended_image:
     dependency: "direct main"
     description:
@@ -328,14 +320,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_rating_bar:
-    dependency: "direct main"
-    description:
-      name: flutter_rating_bar
-      sha256: d2af03469eac832c591a1eba47c91ecc871fe5708e69967073c043b2d775ed93
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.0.1"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -803,7 +787,7 @@ packages:
     source: hosted
     version: "2.10.4"
   retrofit:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: retrofit
       sha256: c6cc9ad3374e6d07008343140a67afffaaa34cdf6bf08d4847d91417a99dcf45
@@ -906,6 +890,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  shimmer:
+    dependency: "direct main"
+    description:
+      name: shimmer
+      sha256: "5f88c883a22e9f9f299e5ba0e4f7e6054857224976a5d9f839d4ebdc94a14ac9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

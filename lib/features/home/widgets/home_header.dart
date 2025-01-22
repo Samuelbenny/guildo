@@ -6,6 +6,7 @@ import 'package:guildo/utils/utils.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:refreshed/refreshed.dart';
 import 'package:guildo/features/home/home.dart';
+import 'package:guildo/widgets/widgets.dart';
 
 class HomeHeader extends GetView<HomeController> {
   const HomeHeader({super.key});
@@ -59,7 +60,13 @@ class HomeHeader extends GetView<HomeController> {
           color: VolcanoTheme.colorScheme.primary,
           child: InkWell(
             borderRadius: 15.r.borderRadius,
-            onTap: () {},
+            onTap: () {
+              Get.bottomSheet(
+                FilterBottomsheet(),
+                isScrollControlled: true,
+                showDragHandle: false,
+              );
+            },
             child: Icon(
               Iconsax.filter_bold,
               color: VolcanoTheme.colorScheme.onPrimary,

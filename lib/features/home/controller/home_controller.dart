@@ -7,12 +7,11 @@ import 'package:supabase_flutter/supabase_flutter.dart' hide Binding;
 
 part 'home_binding.dart';
 part 'home_state.dart';
-part 'home_provider.dart';
 
 class HomeController extends GetxController {
   final HomeState state = HomeState();
-  final HomeProvider _provider = HomeProvider();
 
+  static HomeController get to => Get.find();
 
   @override
   void onInit() async {
@@ -33,15 +32,16 @@ class HomeController extends GetxController {
     state.pagingController.dispose();
   }
 
-  getRestaurants({int offset = 0}) async {
+  getRestaurants({
+    int offset = 0
+  }) async {
     try {
-      final List<Restaurant> restaurants = await _provider.getRestaurants(
+      final List<Restaurant> restaurants = await RestaurantsController.to.getRestaurants(
+        cuisineIds: state.cuisineIds,
         offset: offset
       );
 
-      logger.d("Restaurants: ${restaurants.length}");
-
-      _loadChannels(newItems: restaurants);
+      _loadRestaurants(newItems: restaurants);
     } on PostgrestException catch (error, stackTrace) {
       logger.e(error.message, stackTrace: stackTrace);
       logger.e(error.details);
@@ -52,10 +52,9 @@ class HomeController extends GetxController {
     }
   }
 
-  _loadChannels({required List<Restaurant> newItems}) {
+  _loadRestaurants({required List<Restaurant> newItems}) {
     final int previouslyFetchedItemsCount = state.pagingController.itemList?.length ?? 0;
     final bool isLastPage = newItems.isEmpty || newItems.length < state.limit;
-    logger.w("LastPage: $isLastPage");
 
     if (isLastPage) {
       state.pagingController.appendLastPage(newItems);
@@ -63,5 +62,11 @@ class HomeController extends GetxController {
       final int nextPageKey = previouslyFetchedItemsCount + state.limit;
       state.pagingController.appendPage(newItems, nextPageKey);
     }
+  }
+
+  updateFilters({List<String> cuisineIds = const []}) {
+    state.cuisineIds.assignAll(cuisineIds);
+
+    state.pagingController.refresh();
   }
 }

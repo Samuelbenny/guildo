@@ -1,4 +1,3 @@
-import 'package:dartx/dartx_io.dart';
 import 'package:guildo/config/config.dart';
 import 'package:quickly/quickly.dart';
 import 'package:refreshed/refreshed.dart';

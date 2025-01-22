@@ -1,0 +1,1 @@
+export 'cuisine_item.dart';

@@ -14,11 +14,15 @@ class RestaurantsController extends GetxController {
 
   static RestaurantsController get to => Get.find();
 
-  Future<List<Restaurant>> getRestaurants({int offset = 0}) async {
+  Future<List<Restaurant>> getRestaurants({
+    List<String>? cuisineIds,
+    int offset = 0
+  }) async {
     state.isRestaurantsLoading.value = false;
 
     try {
       final List<Json> restaurantsRes = await _provider.getRestaurants(
+        cuisineIds: cuisineIds,
           offset: offset
       );
 

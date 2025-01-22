@@ -4,7 +4,8 @@ class FilterBinding extends Binding {
   @override
   List<Bind> dependencies() {
     return [
-      Bind.lazyPut(() => FilterController())
+      Bind.put(CuisinesController()),
+      Bind.put(FilterController(), permanent: true)
     ];
   }
 }

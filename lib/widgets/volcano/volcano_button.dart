@@ -90,7 +90,7 @@ class VolcanoButton extends StatelessWidget {
   Color _getTextColor({required bool isDisabled}) {
     if (isDisabled) {
       return disabledTextColor ?? Get.theme.colorScheme
-          .onSurface.withOpacity(0.7);
+          .onSurface.withValues(alpha: 0.7);
     } else {
       return (Get.isDarkMode
           ? VolcanoColors.dark
