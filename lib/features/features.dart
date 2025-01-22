@@ -1,1 +1,2 @@
-export 'package:guildo/features/home/home.dart';
+export 'home/home.dart';
+export 'splash/splash.dart';

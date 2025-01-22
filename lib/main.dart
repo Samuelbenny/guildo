@@ -6,6 +6,8 @@ import 'package:guildo/themes/themes.dart';
 import 'package:refreshed/refreshed.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const GuildoApp());
 }
 

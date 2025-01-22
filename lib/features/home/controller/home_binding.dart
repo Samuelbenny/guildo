@@ -4,7 +4,6 @@ class HomeBinding extends Binding {
   @override
   List<Bind> dependencies() {
     return [
-      Bind.put(SupabaseConnector()),
       Bind.lazyPut(() => HomeController())
     ];
   }

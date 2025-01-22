@@ -1,6 +1,8 @@
 import 'package:guildo/config/guildo_constants.dart';
 import 'package:refreshed/refreshed.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:supabase_flutter/supabase_flutter.dart' hide Binding;
+
+part 'supabase_connector_binding.dart';
 
 class SupabaseConnector extends GetxService {
   late final SupabaseClient supabase;
