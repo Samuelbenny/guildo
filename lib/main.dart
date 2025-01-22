@@ -14,7 +14,6 @@ void main() {
 class GuildoApp extends StatelessWidget {
   const GuildoApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(

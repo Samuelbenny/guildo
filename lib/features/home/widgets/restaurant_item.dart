@@ -33,21 +33,19 @@ class RestaurantItem extends StatelessWidget {
                   _buildName(),
                   20.h.verticalSpace,
                   _buildAddress(),
-                  // 15.h.verticalSpace,
-
-
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       _buildRating(),
                       30.w.horizontalSpace,
+                      _buildReviewsCount(),
                       const Spacer(),
                       _buildPriceType(),
                     ],
                   ),
                   30.h.verticalSpace,
                   RestaurantCuisineList(
-                      cuisines: restaurant.cuisines ?? []
+                    cuisines: restaurant.cuisines ?? []
                   ).withMarginOnly(left: 20.w),
                 ],
               )
@@ -115,6 +113,26 @@ class RestaurantItem extends StatelessWidget {
         ).withMarginOnly(top: 5.h),
       ],
     ).withMarginOnly(left: 30.w);
+  }
+
+  Widget _buildReviewsCount() {
+    return Row(
+      children: [
+        Icon(
+          MingCute.message_4_fill,
+          color: VolcanoTheme.colorScheme.onSurface,
+          size: 25.sp,
+        ),
+        15.w.horizontalSpace,
+        Text(
+          '${restaurant.reviewsCount?.toInt()}',
+          style: TextStyle(
+            color: VolcanoTheme.colorScheme.onSurface.withValues(alpha: 0.7),
+            fontSize: 27.sp,
+          ),
+        ).withMarginOnly(top: 5.h),
+      ],
+    );
   }
 
   Widget _buildPriceType() {

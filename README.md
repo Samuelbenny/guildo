@@ -2,7 +2,7 @@
 
 Guildo : Application Flutter de recherche et de filtrage de restaurants développée
 pour le test technique de ZeGuild. Utilise refreshed (fork de GetX), Dio et Retrofit
-pour les appels API, et freezed/json_serializable pour les modèles. (Jeu de mots : Guild + Resto)
+pour les appels API, et freezed/json_serializable pour les modèles. (Jeu de mots : ZeGuild + Resto)
 
 ## Getting Started
 

@@ -40,4 +40,8 @@ class FilterController extends GetxController {
 
     HomeController.to.updateFilters(cuisineIds: cuisineIds);
   }
+
+  resetFilters() {
+    state.selectedCuisines.clear();
+  }
 }

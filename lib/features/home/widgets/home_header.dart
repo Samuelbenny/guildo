@@ -68,7 +68,7 @@ class HomeHeader extends GetView<HomeController> {
               );
             },
             child: Icon(
-              Iconsax.filter_bold,
+              Clarity.filter_solid,
               color: VolcanoTheme.colorScheme.onPrimary,
               size: 30.w,
             ).padding(all: 20.w),

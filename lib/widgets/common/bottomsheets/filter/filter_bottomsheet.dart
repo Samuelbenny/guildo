@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grock/grock.dart';
 import 'package:guildo/controllers/controllers.dart';
 import 'package:guildo/models/models.dart';
+import 'package:guildo/themes/themes.dart';
 import 'package:guildo/utils/utils.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:refreshed/refreshed.dart';
@@ -19,6 +20,22 @@ class FilterBottomsheet extends GetView<FilterController> {
       initialChildSize: 0.93,
       minChildSize: 0.93,
       maxChildSize: 0.93,
+      actions: [
+        Material(
+          borderRadius: 15.r.borderRadius,
+          child: InkWell(
+            borderRadius: 15.r.borderRadius,
+            onTap: () {
+              controller.resetFilters();
+            },
+            child: Icon(
+              Icons.restart_alt_rounded,
+              color: VolcanoTheme.colorScheme.onSurface,
+              size: 35.w,
+            ).padding(all: 20.w),
+          ),
+        ).withMarginOnly(right: 30.w)
+      ],
       content: _buildContent(),
     );
   }
