@@ -1,6 +1,5 @@
 import 'package:guildo/controllers/controllers.dart';
 import 'package:guildo/models/models.dart';
-import 'package:guildo/services/services.dart';
 import 'package:guildo/utils/utils.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:refreshed/refreshed.dart';
@@ -20,30 +19,42 @@ class HomeController extends GetxController {
     super.onInit();
 
     state.pagingController.addPageRequestListener((pageKey) async {
-      await _getRestaurants(
+      await getRestaurants(
           offset: state.pagingController.itemList?.length ?? 0
       );
     });
   }
 
-  _getRestaurants({int offset = 0}) async {
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    state.pagingController.dispose();
+  }
+
+  getRestaurants({int offset = 0}) async {
     try {
       final List<Restaurant> restaurants = await _provider.getRestaurants(
         offset: offset
       );
 
-      // _loadChannels(newItems: restaurants);
+      logger.d("Restaurants: ${restaurants.length}");
+
+      _loadChannels(newItems: restaurants);
     } on PostgrestException catch (error, stackTrace) {
       logger.e(error.message, stackTrace: stackTrace);
       logger.e(error.details);
+      state.pagingController.error = error;
     } catch (error, stackTrace) {
       logger.e('$error', stackTrace: stackTrace);
+      state.pagingController.error = error;
     }
   }
 
   _loadChannels({required List<Restaurant> newItems}) {
     final int previouslyFetchedItemsCount = state.pagingController.itemList?.length ?? 0;
-    final  bool isLastPage = newItems.length < state.limit;
+    final bool isLastPage = newItems.isEmpty || newItems.length < state.limit;
     logger.w("LastPage: $isLastPage");
 
     if (isLastPage) {

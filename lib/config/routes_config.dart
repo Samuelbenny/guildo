@@ -2,6 +2,7 @@ import 'package:guildo/services/services.dart';
 import 'package:refreshed/refreshed.dart';
 import 'package:guildo/features/features.dart';
 import 'package:guildo/controllers/controllers.dart';
+import 'package:guildo/widgets/widgets.dart';
 
 class RouteConfig {
   static const String splash = "/";
@@ -21,6 +22,7 @@ class RouteConfig {
       page: () => const HomePage(),
       bindings: [
         RestaurantsBinding(),
+        FilterBinding(),
         HomeBinding()
       ]
     )

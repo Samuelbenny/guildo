@@ -22,8 +22,6 @@ class RestaurantsController extends GetxController {
           offset: offset
       );
 
-      logger.d("Restaurants: $restaurantsRes");
-
       return restaurantsRes.map((Json restaurant) {
         return Restaurant.fromJson(restaurant);
       }).toList();

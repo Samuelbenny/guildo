@@ -19,11 +19,12 @@ class Restaurant with _$Restaurant {
     final OpenStatus? openStatus,
     @JsonKey(name: 'open_status_text')
     final String? openStatusText,
-    @JsonKey(name: 'price_type')
-    final String? priceType,
+    @JsonKey(name: 'price_types')
+    final String? priceTypes,
     final double? rating,
     @JsonKey(name: 'reviews_count')
     final double? reviewsCount,
+    final Address? address,
     final List<Cuisine>? cuisines,
     @JsonKey(name: 'created_at')
     final DateTime? createdAt,
