@@ -5,6 +5,7 @@ import 'package:guildo/features/home/home.dart';
 import 'package:guildo/models/models.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:refreshed/refreshed.dart';
+import 'package:guildo/widgets/widgets.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
@@ -39,7 +40,44 @@ class HomePage extends GetView<HomeController> {
           return RestaurantItem(
             restaurant: restaurant,
           );
+        },
+        firstPageProgressIndicatorBuilder: (_) {
+          return _buildLoader();
+        },
+        noItemsFoundIndicatorBuilder: (_) {
+          return _buildNoItemsFound();
         }
+      ),
+    );
+  }
+
+  Widget _buildLoader() {
+    return SizedBox(
+      width: 1.sw, height: 0.8.sh,
+      child: VolcanoShimmer(
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemBuilder: (context, index) {
+            return RestaurantItem(
+              restaurant: Restaurant(),
+            );
+          },
+        )
+      ),
+    );
+  }
+
+  Widget _buildNoItemsFound() {
+    return SizedBox(
+      width: 1.sw, height: 0.8.sh,
+      child: Center(
+        child: Text(
+          'Aucun restaurant trouvé',
+          style: TextStyle(
+            fontSize: 30.sp,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ),
     );
   }
